@@ -22,11 +22,11 @@ jobs:
       - name: Node.js einrichten
         uses: actions/setup-node@v4
         with:
-          node-version: '20' # Oder die von Ihnen verwendete LTS-Version
-          cache: 'npm'
+          node-version: '20' # Die 'cache: npm' Zeile ist hier entfernt.
 
       - name: Abhängigkeiten installieren
-        run: npm install
+        # Die Abhängigkeiten werden bei jedem Lauf frisch installiert.
+        run: npm install 
 
       - name: Projekt erstellen (Build)
         # Die build-Ausgabe befindet sich standardmässig im Ordner 'dist'
@@ -34,7 +34,6 @@ jobs:
 
       - name: GitHub Pages konfigurieren
         uses: actions/configure-pages@v5
-        # Passt die Umgebung für GitHub Pages an
 
       - name: Build-Artefakt hochladen
         uses: actions/upload-pages-artifact@v3
@@ -52,4 +51,3 @@ jobs:
       - name: Deploy zu GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        # Diese Action führt das Deployment direkt aus dem Artefakt durch
