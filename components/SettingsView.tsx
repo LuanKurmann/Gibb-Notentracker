@@ -1,7 +1,7 @@
 import React from 'react';
 import { SchoolConfig, Settings } from '../types';
 import { TEXTS, ACCENT_COLORS } from '../constants';
-import { Moon, Sun, Monitor, Calendar, Cloud, LogOut, CheckCheck, Copy, Check } from 'lucide-react';
+import { Moon, Sun, Monitor, Calendar, Cloud, LogOut, CheckCheck, Copy, Check, Download } from 'lucide-react';
 import { Session } from '@supabase/supabase-js';
 
 interface SettingsViewProps {
@@ -12,6 +12,7 @@ interface SettingsViewProps {
   onLogout: () => void;
   calendarUrl: string | null;
   onEnableCalendar: () => void;
+  onDownload: () => void;
 }
 
 const SettingsView: React.FC<SettingsViewProps> = ({
@@ -21,7 +22,8 @@ const SettingsView: React.FC<SettingsViewProps> = ({
   onLogin,
   onLogout,
   calendarUrl,
-  onEnableCalendar
+  onEnableCalendar,
+  onDownload
 }) => {
   const lang = config.settings.language;
   const t = TEXTS[lang];
@@ -197,6 +199,21 @@ const SettingsView: React.FC<SettingsViewProps> = ({
                   {session ? t.calendar.enable : t.calendar.info}
                </button>
             )}
+         </div>
+      </div>
+
+       {/* Data & Export */}
+      <div className="bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-sm border border-gray-100 dark:border-gray-700">
+         <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-6">{t.settingsView.data}</h3>
+         <div>
+            <label className="block text-gray-900 dark:text-white font-bold mb-2">{t.downloadConfig}</label>
+            <p className="text-sm text-gray-500 mb-4">{t.settingsView.exportDesc}</p>
+            <button
+               onClick={onDownload}
+               className="w-full py-3 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-200 rounded-xl font-bold hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors flex items-center justify-center gap-2"
+            >
+               <Download size={20} /> {t.settingsView.exportBtn}
+            </button>
          </div>
       </div>
     </div>

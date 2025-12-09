@@ -655,6 +655,7 @@ const App: React.FC = () => {
                onLogout={() => { supabase.auth.signOut(); }}
                calendarUrl={calendarUrl}
                onEnableCalendar={handleEnableCalendar}
+               onDownload={handleDownload}
             />
         ) : viewMode === 'stats' ? (
            <StatsView config={config} activeSemesterId={activeSemesterId} lang={lang} />
@@ -855,7 +856,7 @@ const App: React.FC = () => {
 
                {calendarUrl ? (
                   <div className="space-y-4">
-                     <div className="bg-gray-50 dark:bg-gray-900 p-3 rounded-lg border border-gray-200 dark:border-gray-700 break-all text-xs font-mono text-gray-600 dark:text-gray-400">
+                     <div className="bg-gray-50 dark:bg-gray-900 p-3 rounded-lg border border-gray-200 dark:border-gray-600 font-mono text-xs text-gray-600 dark:text-gray-400 truncate">
                         {calendarUrl.replace('https://', 'webcal://')}
                      </div>
                      <button 

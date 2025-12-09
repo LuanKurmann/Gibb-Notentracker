@@ -99,12 +99,15 @@ export const TEXTS = {
       appearance: "Erscheinungsbild",
       general: "Allgemein",
       account: "Konto & Synchronisation",
+      data: "Daten & Export",
       defaultSemester: "Standard Semester",
       defaultSemesterDesc: "Dieses Semester wird beim Start der App automatisch geöffnet.",
       themeDesc: "Wähle zwischen hellem und dunklem Design.",
       langDesc: "Wähle die Sprache der Applikation.",
       accentColor: "Akzentfarbe",
-      accentColorDesc: "Wähle deine bevorzugte Farbe für die App."
+      accentColorDesc: "Wähle deine bevorzugte Farbe für die App.",
+      exportDesc: "Lade deine aktuellen Daten als JSON-Datei herunter, um sie lokal zu sichern.",
+      exportBtn: "Daten herunterladen"
     }
   },
   en: {
@@ -193,12 +196,15 @@ export const TEXTS = {
       appearance: "Appearance",
       general: "General",
       account: "Account & Sync",
+      data: "Data & Export",
       defaultSemester: "Default Semester",
       defaultSemesterDesc: "This semester will be opened automatically when the app starts.",
       themeDesc: "Choose between light and dark theme.",
       langDesc: "Choose the application language.",
       accentColor: "Accent Color",
-      accentColorDesc: "Choose your preferred color for the app."
+      accentColorDesc: "Choose your preferred color for the app.",
+      exportDesc: "Download your current data as a JSON file for local backup.",
+      exportBtn: "Download Data"
     }
   },
   fr: {
@@ -287,12 +293,15 @@ export const TEXTS = {
       appearance: "Apparence",
       general: "Général",
       account: "Compte & Synchronisation",
+      data: "Données & Exportation",
       defaultSemester: "Semestre par défaut",
       defaultSemesterDesc: "Ce semestre s'ouvrira automatiquement au démarrage.",
       themeDesc: "Choisissez entre le thème clair et sombre.",
       langDesc: "Choisissez la langue de l'application.",
       accentColor: "Couleur d'accent",
-      accentColorDesc: "Choisissez votre couleur préférée pour l'application."
+      accentColorDesc: "Choisissez votre couleur préférée pour l'application.",
+      exportDesc: "Téléchargez vos données actuelles sous forme de fichier JSON pour une sauvegarde locale.",
+      exportBtn: "Télécharger les données"
     }
   }
 };
